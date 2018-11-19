@@ -16,7 +16,7 @@ import { HomePage } from '../pages/home/home';
     HomePage,
     // *. 3referencia a pagina
     Pagina2Page,
-    Pagina3Page
+   
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { HomePage } from '../pages/home/home';
     HomePage,
     //*.4 referencia a pagina
     Pagina2Page, 
-    Pagina3Page
+    
   ],
   providers: [
     StatusBar,

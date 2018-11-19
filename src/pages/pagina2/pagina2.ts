@@ -22,4 +22,10 @@ export class Pagina2Page {
     console.log('ionViewDidLoad Pagina2Page');
   }
 
+  // *.10 crear metodo para el evento de html
+  ir_pagina3(){
+    // *.11 invocado el nombre que aparece en pagina3.module.ts  
+    // creando la pagina con el comando no es necesario importarlo a home.ts 
+    this.navCtrl.push("Pagina3Page")
+  }
 }

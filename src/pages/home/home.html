@@ -11,8 +11,10 @@
     ionic g page pagina2
     ionic g page pagina3-->
     <!-- *.2 creo un boton con su navegacion a la pagina 2-->
+    <!-- *.8 añado la navegacion a la pag2 con navpush-->
     <button ion-button
-            block>
-      Ir a pagina 2           
+            block         
+            [navPush]="pag2">
+      Ir a pagina 2                 
     </button>
 </ion-content>
