@@ -26,6 +26,9 @@ export class Pagina2Page {
   ir_pagina3(){
     // *.11 invocado el nombre que aparece en pagina3.module.ts  
     // creando la pagina con el comando no es necesario importarlo a home.ts 
-    this.navCtrl.push("Pagina3Page")
+  //  this.navCtrl.push("Pagina3Page");
+
+    // *.13 otra forma de referenciar por el nombre de ionicpage pagina3.ts
+    this.navCtrl.push("mi-pagina3");
   }
 }
