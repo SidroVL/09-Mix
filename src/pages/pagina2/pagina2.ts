@@ -29,8 +29,11 @@ export class Pagina2Page {
     // *.13 otra forma de referenciar por el nombre de ionicpage pagina3.ts
     this.navCtrl.push("mi-pagina3");
   }
+  ir_pagina4(){
+    this.navCtrl.push("mi-pagina4");
+  }
 
-  
+  // *.15 ver en consola la ejecucion del ciclo de vida de la pagina
   ionViewDidLoad() { //metodo que ocurre al cargar la pagina
     
     console.log('ionViewDidLoad Pagina2Page');
