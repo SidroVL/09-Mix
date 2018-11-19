@@ -18,9 +18,7 @@ export class Pagina2Page {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Pagina2Page');
-  }
+ 
 
   // *.10 crear metodo para el evento de html
   ir_pagina3(){
@@ -30,5 +28,39 @@ export class Pagina2Page {
 
     // *.13 otra forma de referenciar por el nombre de ionicpage pagina3.ts
     this.navCtrl.push("mi-pagina3");
+  }
+
+  
+  ionViewDidLoad() { //metodo que ocurre al cargar la pagina
+    
+    console.log('ionViewDidLoad Pagina2Page');
+  }
+
+  ionViewWillEnter(){
+    console.log("ionViewWillEnter");
+  }
+
+  ionViewDidEnter(){
+    console.log("ionViewDidEnter");
+  }
+
+  ionViewWillLeave(){
+    console.log("ionViewWillLeave");
+  }
+
+  ionViewDidLeave(){
+    console.log("ionViewDidLeave");
+  }
+
+  ionViewWillUnload(){
+    console.log("ionViewWillUnload");
+  }
+
+  ionViewCanEnter(){
+    console.log("ionViewCanEnter");
+  }
+
+  ionViewCanLeave(){
+    console.log("ionViewCanLeave");
   }
 }
