@@ -61,9 +61,25 @@ export class Pagina2Page {
 
   ionViewCanEnter(){
     console.log("ionViewCanEnter");
+    // *.16 entrar de forma aleatoria
+    let numero=Math.round(Math.random()*10);
+    console.log(numero);
+    if(numero>=3){
+      return true; //entra en la pagina
+    } else {
+      return false; //no entra en la pagina
+    }
   }
 
   ionViewCanLeave(){
     console.log("ionViewCanLeave");
+    // *.17 dejamos salir despues de 2 segundos
+    let promesa = new Promise((resolv,reject) =>{
+        setTimeout(() =>{resolv (true);
+    } , 2000)
+  });
+    return promesa;
+
+    // *.18 sintaxis alternativa return new Promise();
   }
 }
