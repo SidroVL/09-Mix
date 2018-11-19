@@ -11,7 +11,7 @@ import { HomePage } from '../pages/home/home';
 export class MyApp {
   //rootPage:any = HomePage;
   // .23 mostrar temporalmente la pagina de introduccion
-  rootPage:any = "IntroduccionPage";
+  rootPage:any = IntroduccionPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
