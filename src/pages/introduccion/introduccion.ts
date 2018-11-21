@@ -42,6 +42,8 @@ export class IntroduccionPage {
   }
 
   // *.25 crear un evento click
+  // *.26 instalar plugin storage: ionic cordova plugin add cordova-sqlite-storage
+  // *.27 generar el provider ajustes
   saltar_tutorial(){
 
   }
