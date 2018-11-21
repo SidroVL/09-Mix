@@ -26,14 +26,34 @@ export class AjustesProvider {
   //*.29 crear el almacenamiento
 
   cargar_storage(){
-    if(this.plataforma.is("cordova")){ //estamos en el móvil
+    // if(this.plataforma.is("cordova")){ //estamos en el móvil
 
-    } else { //estamos en el navegador
-      //localStorage viene en html5 y soportado por navegadores modernos
-      if(localStorage.getItem("ajustes")){
-        this.listaAjustes=JSON.parse(localStorage.getItem("ajustes"));//pasamos string(guarda el navegador) a JSON
-      }
-    }
+    // } else { //estamos en el navegador
+    //   //localStorage viene en html5 y soportado por navegadores modernos
+    //   if(localStorage.getItem("ajustes")){
+    //     this.listaAjustes=JSON.parse(localStorage.getItem("ajustes"));//pasamos string(guarda el navegador) a JSON
+    //   }
+    // }
+
+    // *.37 reformular todo como una promesa
+    let promesa=new Promise((resolv, reject) => { //declarar la promesa
+      if(this.plataforma.is("cordova")){ //estamos en el móvil
+          this.storage.ready().then(()=>{
+            this.storage.get("ajustes").then(a =>{
+                this.listaAjustes=a;
+            }
+            )
+          }
+          )
+        } else { //estamos en el navegador
+         
+          if(localStorage.getItem("ajustes")){
+            this.listaAjustes=JSON.parse(localStorage.getItem("ajustes"));
+          }
+          resolv();
+        }
+    }); 
+    return promesa;
   }
 
   // *.32 creamos el metodo que guarda un valor en el movil o navegador
