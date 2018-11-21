@@ -1,3 +1,4 @@
+import { AjustesProvider } from './../../providers/ajustes/ajustes';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -34,7 +35,10 @@ export class IntroduccionPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // *.33 inyectar el servicio creado
+  constructor(public navCtrl: NavController, 
+                public navParams: NavParams,
+                public ajustesProvider:AjustesProvider) {
   }
 
   ionViewDidLoad() {
@@ -44,8 +48,12 @@ export class IntroduccionPage {
   // *.25 crear un evento click
   // *.26 instalar plugin storage: ionic cordova plugin add cordova-sqlite-storage
   // *.27 generar el provider ajustes
-  saltar_tutorial(){
 
+  //despues de hacer todo los de ajustes venimos aqui
+  saltar_tutorial(){
+    //*.34
+    this.ajustesProvider.listaAjustes.mostrar_tutorial= false;
+    this.ajustesProvider.guardar_storage();
   }
 
 }

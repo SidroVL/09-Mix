@@ -1,3 +1,4 @@
+import { IntroduccionPage } from './../pages/introduccion/introduccion';
 // *.5 import de la pagina
 import { Pagina3Page } from './../pages/pagina3/pagina3';
 import { Pagina2Page } from './../pages/pagina2/pagina2';
@@ -19,6 +20,7 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     // *. 3referencia a pagina
     Pagina2Page,
+    IntroduccionPage
    
   ],
   imports: [
@@ -32,7 +34,7 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     //*.4 referencia a pagina
     Pagina2Page, 
-    
+    IntroduccionPage
   ],
   providers: [
     StatusBar,
