@@ -40,7 +40,10 @@ export class AjustesProvider {
       if(this.plataforma.is("cordova")){ //estamos en el móvil
           this.storage.ready().then(()=>{
             this.storage.get("ajustes").then(a =>{
+              if(a){
                 this.listaAjustes=a;
+              }
+              resolv();
             }
             )
           }
@@ -59,7 +62,10 @@ export class AjustesProvider {
   // *.32 creamos el metodo que guarda un valor en el movil o navegador
   guardar_storage(){
     if(this.plataforma.is("cordova")){ 
+      // *.39 si estamos en el movil
+      this.storage.ready().then(()=>{this.storage.set("ajustes",this.listaAjustes)}
 
+      )
     } else {
       localStorage.setItem("ajustes",JSON.stringify( this.listaAjustes)); //aplanamos(de JSON a cadena continua) el JSON
     }

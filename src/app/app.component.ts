@@ -27,12 +27,23 @@ export class MyApp {
 
       // *.36 cargar introduccion o home en funcion de lo que tenga guardado
 
-      this.ajustesProvider.cargar_storage();
-      if (this.ajustesProvider.listaAjustes.mostrar_tutorial){
-        this.rootPage=IntroduccionPage;
-      } else{
-        this.rootPage=HomePage;
-      }
+      // this.ajustesProvider.cargar_storage();
+      // if (this.ajustesProvider.listaAjustes.mostrar_tutorial){
+      //   this.rootPage=IntroduccionPage;
+      // } else{
+      //   this.rootPage=HomePage;
+      // }
+
+      // *.38 hacemos los mismo pero suscribiendo con un then a cargar_storage()
+
+      this.ajustesProvider.cargar_storage().then( () => {
+
+         if (this.ajustesProvider.listaAjustes.mostrar_tutorial){
+            this.rootPage=IntroduccionPage;
+         } else{
+          this.rootPage=HomePage;
+          }
+      })
 
       statusBar.styleDefault();
       splashScreen.hide();
