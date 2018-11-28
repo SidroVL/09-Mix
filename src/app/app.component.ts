@@ -20,7 +20,7 @@ export class MyApp {
   }
 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private ajustesProvider: AjustesProvider) {
+  constructor(private platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private ajustesProvider: AjustesProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -47,7 +47,15 @@ export class MyApp {
 
       statusBar.styleDefault();
       splashScreen.hide();
-    });
+
+      // *.40 operaciones de pausa y resume
+      this.platform.pause.subscribe(()=>{ //el this solo hace falta si la inyeccion es private
+        console.log("la app se va a pausar")
+      });  
+      this.platform.resume.subscribe(()=>{
+        console.log("la app se va a reanudar")
+        });
+      });
   }
 }
 
